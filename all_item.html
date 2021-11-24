@@ -1,0 +1,35 @@
+{% extends 'admin.html' %}
+{% block body %}
+{% load static %}
+<form action="iteam_edit/{{a}}">
+    <center>
+<table border="3" width="50%" >
+  <tbody>
+    <tr>
+
+      <th>Item Name </th>
+      <th>Item Price </th>
+      <th>GST</th>
+      <th>Photo</th>
+    </tr>
+  </tbody>
+  <tbody>
+  {% for a,b,c,d in w %}
+    <tr>
+        <td>{{a}}</td>
+        <td>{{b}}</td>
+        <td>{{c}}</td>
+        <td align="center"><img class="img img-circle" src="{% static d %}" height="100" width="100"></td>
+        <td width="100px" align="center"><a href="http://127.0.0.1:8000/admin/app1/imagem"><input type="button" class="btn btn-danger" value="DELETE"></input></a></td>
+        <td width="100px" align="center">
+            <a href="http://127.0.0.1:8000/iteam_edit/{{a}}"><input type="button" class="btn btn-success" value="EDIT"></input></a></td>
+<!--     <a href="update/{{book.id}}" class="btn btn-warning" id = '{{book.id}}'>edit</a>-->
+	<td ><input type="checkbox"></input></a></td>
+    </tr>
+  {% endfor %}
+  </tbody>
+  
+</table>
+ </center>
+</form>
+{% endblock %}
